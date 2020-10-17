@@ -23,7 +23,7 @@ class Request {
 				return response.data;
 			}
 			else if (request == 'GetServerStatus') {
-				return response.data.attributes.state;
+				return response.data.attributes;
 			}
 			else if (request == 'IsOwner') {
 				return response.data.attributes.server_owner;
@@ -93,7 +93,7 @@ function getUrl(request, host, data) {
 		return host + '/api/client/servers/' + data;
 	}
 	else if (utilization.indexOf(request) > -1) {
-		return host + '/api/client/servers/' + data + '/utilization';
+		return host + '/api/client/servers/' + data + '/resources';
 	}
 	else if (powerAction.indexOf(request) > -1) {
 		return host + '/api/client/servers/' + data + '/power';
